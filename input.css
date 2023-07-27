@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@100;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@layer components {
+  .nav-link {
+    @apply md:hover:text-veryDarkBlue hover:text-darkGrayishBlue duration-300 ease-in-out scale-125 md:hover:border-b-2 border-b-Orangee transition-all;
+  }
+
+  .thumnail-img {
+    @apply border-Orangee hover:border-2 transition-opacity duration-300 hover:opacity-50;
+  }
+
+  .btn {
+    @apply absolute top-1/2 translate-y-[-50%] items-center inline-block mx-3;
+  }
+
+  .btn.prev {
+    @apply left-[10px] flex-1 h-[65px] bg-paleOrange rounded-[100%] py-[14px] px-[18px] border-2 hover:bg-Orangee transition-colors duration-300 cursor-pointer;
+  }
+  .btn.next {
+    @apply left-[75%] sm:left-[85%] h-[65px] bg-paleOrange rounded-[100%] py-[14px] px-[18px] border-2 hover:bg-Orangee transition-colors duration-300 cursor-pointer;
+  }
+
+  /*plus and minus*/
+  .inc-dec {
+    @apply hover:bg-gray-200 transition-colors duration-300;
+  }
+
+  .btn-2 {
+    @apply transition-opacity hover:opacity-70 duration-300 shadow-xl shadow-paleOrange;
+  }
+}
